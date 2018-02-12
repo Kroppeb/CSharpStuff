@@ -14,29 +14,10 @@ namespace Kroppeb.Algorithms.BranchHandling
 		private bool ItemSet = false;
 		private T item;
 
-		public virtual IEnumerable<Branch<T>> BranchList => handler.SplitOn(Item);
-		public BranchHandler<T> Handler
-		{
-			get => handler;
-			set => handler = handler ?? value;
-		}
+		public IEnumerable<Branch<T>> BranchList => handler.Split(this);
+		public BranchHandler<T> Handler => handler;
 
-		public T Item
-		{
-			get => item;
-			set
-			{
-				if (!ItemSet)
-				{
-					item = value;
-					ItemSet = true;
-				}
-			}
-		}
-
-		public Branch() 
-		{
-		}
+		public T Item => item;
 
 		public Branch(T item, BranchHandler<T> handler)
 		{
