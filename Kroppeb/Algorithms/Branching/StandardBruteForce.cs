@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-using Kroppeb.Algorithms.BranchHandling;
+using Kroppeb.Algorithms.Branching;
 
 namespace Kroppeb.Algorithms.BruteForce
 {
@@ -22,7 +22,7 @@ namespace Kroppeb.Algorithms.BruteForce
 			startingValue = start;
 			this.save = save;
 			this.stop = stop;
-			branches= branching
+			branches = branching;
 		}
 
 		public TBranch Start<TBranch>() where TBranch : IBranchHandler,new()
